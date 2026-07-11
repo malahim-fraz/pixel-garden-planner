@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans text-xl bg-sky-light text-earth-dark dark:bg-earth-dark dark:text-sky-light;
+    /* Pixelated rendering for crisp edges */
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+  }
+}
+
+@layer components {
+  .pixel-border {
+    @apply border-4 border-earth-dark dark:border-earth-light;
+  }
+
+  .pixel-card {
+    @apply bg-sky-light dark:bg-earth-light text-earth-dark dark:text-earth-dark pixel-border shadow-pixel p-4;
+  }
+
+  .pixel-btn {
+    @apply font-pixel text-xs bg-nature-light hover:bg-nature text-white px-4 py-2 border-2 border-earth-dark dark:border-earth-dark shadow-pixel-sm transition-transform active:translate-x-1 active:translate-y-1 active:shadow-none;
+  }
+
+  .pixel-btn-danger {
+    @apply bg-red-500 hover:bg-red-600 text-white;
+  }
+
+  .pixel-input {
+    @apply bg-white dark:bg-earth text-earth-dark dark:text-sky-light border-2 border-earth-dark dark:border-earth-light px-2 py-1 focus:outline-none font-sans text-lg;
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+::-webkit-scrollbar-track {
+  background: #8b5a2b;
+}
+::-webkit-scrollbar-thumb {
+  background: #3a5e26;
+  border: 2px solid #8b5a2b;
+}
